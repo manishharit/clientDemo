@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import InputForm from "../src/Components/InputForm";
+import VendorTable from "../src/Components/VendorTable";
+import EmployeeTable from "../src/Components/EmployeeTable";
+import { Routes, Route ,BrowserRouter} from "react-router-dom";
+import ShowAllEmails from "../src/Components/InputForm";
 import './App.css';
+import ShowSendEmails from "./Components/ShowSendEmails";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<InputForm />} />
+        <Route path="/vendors" element={<VendorTable />} />
+        <Route path="/employees" element={<EmployeeTable />} />
+        <Route path="/allemails" element={<ShowSendEmails />} />
+      </Routes>
+    </BrowserRouter>
+    </>
   );
 }
 
